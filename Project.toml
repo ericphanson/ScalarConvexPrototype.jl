@@ -1,0 +1,13 @@
+name = "Convex2"
+uuid = "b03dadff-66fa-45d8-92e0-f26f1b3e5e9c"
+authors = ["Eric P. Hanson"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
