@@ -11,15 +11,27 @@ using Test
         t >= -4
         minimize!(pos_t)
 
-        @test evaluate(pos_t) ≈ 0 atol=1e-4
+        @test evaluate(pos_t) ≈ 0 atol = 1e-4
     end
 
     @testset "b" begin
         model = Model(MOI.instantiate(Clarabel.Optimizer{Float64}; with_bridge_type=Float64))
         mat = variables(model, 2, 2)
-        mat[1,1] >= 1
-        mat[2,2] <= -1
+        mat[1, 1] >= 1
+        mat[2, 2] <= -1
         minimize!(ScalarConvexPrototype.norm2(mat))
         @test evaluate.(mat) ≈ [1 0; 0 -1]
+    end
+
+    @testset "c" begin
+        model = Model(MOI.instantiate(Clarabel.Optimizer{Float64}; with_bridge_type=Float64))
+        v = variable(model)
+        v + 1 == 0
+        solve!(model)
+        @test evaluate(v) ≈ -1 atol = 1e-4
+        t = max(v, 1)
+        t >= 0
+        solve!(model)
+        @test evaluate(t + 2) ≈ 3 atol = 1e-4
     end
 end
