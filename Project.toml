@@ -3,6 +3,11 @@ uuid = "b03dadff-66fa-45d8-92e0-f26f1b3e5e9c"
 authors = ["Eric P. Hanson"]
 version = "1.0.0-DEV"
 
+[deps]
+Clarabel = "61c947e1-3e6d-4ee4-985a-eec8c727bd6e"
+MathOptInterface = "b8f27783-ece8-5eb3-8dc8-9495eed66fee"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
 [compat]
 julia = "1.10"
 
