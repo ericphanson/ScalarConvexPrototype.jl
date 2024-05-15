@@ -1,4 +1,4 @@
-name = "Convex2"
+name = "ScalarConvexPrototype"
 uuid = "b03dadff-66fa-45d8-92e0-f26f1b3e5e9c"
 authors = ["Eric P. Hanson"]
 version = "1.0.0-DEV"

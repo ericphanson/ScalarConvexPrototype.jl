@@ -69,6 +69,6 @@ jobs:
         shell: julia --project=docs --color=yes {0}
         run: |
           using Documenter: DocMeta, doctest
-          using Convex2
-          DocMeta.setdocmeta!(Convex2, :DocTestSetup, :(using Convex2); recursive=true)
-          doctest(Convex2)
+          using ScalarConvexPrototype
+          DocMeta.setdocmeta!(ScalarConvexPrototype, :DocTestSetup, :(using ScalarConvexPrototype); recursive=true)
+          doctest(ScalarConvexPrototype)

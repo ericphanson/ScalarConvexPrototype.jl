@@ -1,14 +1,14 @@
-using Convex2
+using ScalarConvexPrototype
 using Documenter
 
-DocMeta.setdocmeta!(Convex2, :DocTestSetup, :(using Convex2); recursive=true)
+DocMeta.setdocmeta!(ScalarConvexPrototype, :DocTestSetup, :(using ScalarConvexPrototype); recursive=true)
 
 makedocs(;
-    modules=[Convex2],
+    modules=[ScalarConvexPrototype],
     authors="Eric P. Hanson",
-    sitename="Convex2.jl",
+    sitename="ScalarConvexPrototype.jl",
     format=Documenter.HTML(;
-        canonical="https://ericphanson.github.io/Convex2.jl",
+        canonical="https://ericphanson.github.io/ScalarConvexPrototype.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -18,6 +18,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/ericphanson/Convex2.jl",
+    repo="github.com/ericphanson/ScalarConvexPrototype.jl",
     devbranch="main",
 )

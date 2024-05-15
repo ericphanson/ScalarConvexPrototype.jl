@@ -1,4 +1,4 @@
-module Convex2
+module ScalarConvexPrototype
 
 import MathOptInterface as MOI
 import MathOptInterface.Utilities as MOIU

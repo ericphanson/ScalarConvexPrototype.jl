@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = Convex2
+CurrentModule = ScalarConvexPrototype
 ```
 
-# Convex2
+# ScalarConvexPrototype
 
-Documentation for [Convex2](https://github.com/ericphanson/Convex2.jl).
+Documentation for [ScalarConvexPrototype](https://github.com/ericphanson/ScalarConvexPrototype.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [Convex2]
+Modules = [ScalarConvexPrototype]
 ```
