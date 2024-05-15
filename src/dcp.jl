@@ -164,11 +164,3 @@ Base.:*(::Sign, v::Vexity) = v
 # *(::Vexity, ::Sign)
 
 Base.:*(v::Vexity, s::Sign) = s * v
-
-# Accessors
-
-vexity(a::AbstractExpr) = a.vexity
-vexity(::Number) = ConstVexity()
-
-sign(a::AbstractExpr) = a.sign
-sign(n::Number) = n >= 0 ? Positive() : Negative()

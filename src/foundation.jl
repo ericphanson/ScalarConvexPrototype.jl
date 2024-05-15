@@ -26,9 +26,17 @@ end
 
 Base.zero(::AbstractExpr{T}) where {T} = zero(T)
 
-function Base.show(io::IO, a::AbstractExpr{T}) where T
+function Base.show(io::IO, a::AbstractExpr{T}) where {T}
     println(io, "AbstractExpr{$T}:")
     println(io, "- head: $(a.head)")
     println(io, "- sign: $(a.sign)")
     print(io, "- vexity: $(a.vexity)")
 end
+
+# Accessors
+
+vexity(a::AbstractExpr) = a.vexity
+vexity(::Number) = ConstVexity()
+
+sign(a::AbstractExpr) = a.sign
+sign(n::Number) = n >= 0 ? Positive() : Negative()
