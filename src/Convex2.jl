@@ -5,7 +5,7 @@ import MathOptInterface.Utilities as MOIU
 using Test
 
 export MOI, MOIU
-export Model, variable, variables, solve!, evaluate
+export Model, variable, variables, solve!, evaluate, minimize!
 
 include("foundation.jl")
 include("dcp.jl")

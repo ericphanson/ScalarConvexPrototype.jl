@@ -8,6 +8,23 @@ function evaluate(x::AbstractExpr; result=1)
     return MOIU.eval_variables(v -> MOI.get(model, MOI.VariablePrimal(result), v), model, x.head)
 end
 
+function minimize!(a::AbstractExpr)
+    model = moi_model(a)
+    MOI.set(
+           model,
+           MOI.ObjectiveFunction{typeof(a.head)}(),
+           a.head,
+       );
+
+    MOI.set(model, MOI.ObjectiveSense(), MOI.MIN_SENSE)
+
+    if a.vexity == ConcaveVexity()
+        return DCPViolationError()
+    end
+    
+    return MOI.optimize!(model)
+end
+
 function solve!(m::Model)
-    return MOI.optimize!(moi_model(m))
+    MOI.optimize!(moi_model(m))
 end
